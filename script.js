@@ -1,33 +1,44 @@
 // add questions
 var questions = [
     {
-        question: 'What is a header element',
-        answers: ['<h1>', '<p>', '<img>', '<footer>'],
-        answer: '<h1>',
+        id: 0,
+        q: 'Who is the Greek God of Wisdom?',
+        a: [{ text: 'Athena', isCorrect: true },
+        { text: 'Hera', isCorrect: false },
+        { text: 'Zeus', isCorrect: false },
+        { text: 'Hephestus', isCorrect: false }]
+        
+    },
+    { id: 1,
+        q: 'What was the name of the Famous Greek Hero from The Odyssey?',
+        a: [{ text: 'Jason', isCorrect: false },
+            { text: 'Hercules', isCorrect: false },
+            { text: 'Odysseus', isCorrect: true },
+            { text: 'Kratos', isCorrect: false }]
+        
+    },
+
+    {   id: 2,
+        q: 'What was the name of the Titan that had children with Gaia?',
+        a: [{ text: 'Kronos', isCorrect: false },
+            { text: 'Hyperion', isCorrect: false },
+            { text: 'Rhea', isCorrect: false },
+            { text: 'Uranus', isCorrect: true }]
     },
 
     {
-        question: 'What is a header element',
-        answers: ['<h1>', '<p>', '<img>', '<footer>'],
-        answer: '<h1>',
+        id: 3,
+        q: 'Who is the god of Death?',
+        a: ['Hades', 'Erebus', 'Thanatos', 'Cerberus'],
     },
 
-    {
-        question: 'What is a header element',
-        answers: ['<h1>', '<p>', '<img>', '<footer>'],
-        answer: '<h1>',
-    },
+    {   id: 4,
+        q: 'What Greek Hero was known for slaying Medusa?',
+        a: [{ text: 'Jason', isCorrect: false },
+            { text: 'Perseus', isCorrect: true },
+            { text: 'Achillies', isCorrect: false },
+            { text: 'Theseus', isCorrect: false }]
 
-    {
-        question: 'What is a header element',
-        answers: ['<h1>', '<p>', '<img>', '<footer>'],
-        answer: '<h1>',
-    },
-
-    {
-        question: 'What is a header element',
-        answers: ['<h1>', '<p>', '<img>', '<footer>'],
-        answer: '<h1>',
     },
 ];
 // add timer variables
