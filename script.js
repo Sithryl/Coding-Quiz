@@ -29,7 +29,10 @@ var questions = [
     {
         id: 3,
         q: 'Who is the god of Death?',
-        a: ['Hades', 'Erebus', 'Thanatos', 'Cerberus'],
+        a: [{ text: 'Hades', isCorrect: false },
+            { text: 'Erebus', isCorrect: false },
+            { text: 'Thanatos', isCorrect: true },
+            { text: 'Cerberus', isCorrect: false }]
     },
 
     {   id: 4,
