@@ -22,6 +22,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .question-container{
     margin: 10px;
@@ -32,6 +33,19 @@ body{
     font-size: x-large;
     text-align: center;
       
+}
+
+.questions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.choices button{
+    display: inline-flex;
+    margin: 10px;
+
 }
 
 .start-button {

@@ -62,9 +62,7 @@ function clearStartScreen() {
 }
 
 
-
-
-// choices timer starts when i am presented with choices question
+// when i answer all question or if the timer is 0 the game ends
 function timer() {
     var timeInterval = setInterval(function () {
         timeLeft--;
@@ -72,12 +70,17 @@ function timer() {
         if (timeLeft === 0) {
             timerEl.textContent = '';
             clearInterval(timeInterval);
-            // endGame();
+            endGame();
+        }
+        if (index == questions.length) {
+             timerEl.textContent = '';
+            clearInterval(timeInterval);
+            endGame();
         }
     }, 1000);
 };
 console.log(timeLeft)
-// when i answer choices question i get another one
+// get first question
 function getQuestions() {
 
     questions.textContent = "";
@@ -89,29 +92,28 @@ function getQuestions() {
     document.getElementById("show").textContent = questions[index].question;
 
     for (var i = 0; i < questions[index].choices.length; i++) {
-        var choicesVisable = document.createElement("li");
+        var choicesVisable = document.createElement("button");
         choicesVisable.setAttribute("id", questions[index].choices[i]);
         choiceEl.appendChild(choicesVisable);
         choicesVisable.append(questions[index].choices[i]);
 
         choicesVisable.addEventListener("click", function (event) {
             if (event.target.id = questions[index].correct) {
-                resultEl.textContent = "correct";
-                score += 10;
+                resultEl.textContent = "Correct!";
                 console.log("correct");
             }
             else{
-                resultEl.textContent = "incorrect";
-                secondsLeft -= 10;
+                resultEl.textContent = "Incorrect";
+                timeLeft -= 10;
+                timerEl.textContent = timeLeft;
                 console.log("incorrect");
             }
             nextQuestion();
 
         })
-
     }
 }
-
+// get next question
 function nextQuestion(){
     index ++;
     resultEl.textContent = "";
@@ -124,7 +126,7 @@ function nextQuestion(){
     endGame();
     }
 }
-// when i answer all question or if the timer is 0 the game ends
+
 // when the game ends i can save my score
 function endGame() {
         console.log("game over");
@@ -132,13 +134,15 @@ function endGame() {
         endScreen.classList.remove("hide"); 
         
         submit.addEventListener("click", () => {
-            ;
         });
     }
 
-    function renderScoreboard() {
-        clearStartScreen();
+function renderScoreboard() {
+    clearStartScreen();
+    finalScore.textContent = 
+    window.localStorage.setItem(initials)
+    window.localStorage.setItem(finalScore)
 
         // renders scores and initials from local storage (use for loop and array)
 
-    }
+}
